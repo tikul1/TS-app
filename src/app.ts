@@ -1,6 +1,6 @@
 import  express,{Request, Response} from "express";
 import { router }from "./routes/routes";
-
+import { connects } from "./db/db";
 const app = express();
 
 app.use(express.json());
@@ -10,6 +10,7 @@ app.use(
   })
 );
 
+connects()
 app.use('/', router)
 
 // app.get("/test", (req: Request, res:Response):void => {
