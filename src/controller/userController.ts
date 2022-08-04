@@ -10,7 +10,6 @@ import {createUser, findUser, updateUser, deleteUser} from "../services/userServ
 // }
 
 //CRUD with the help of services
-
 // >> Find  <<
 export const listUser = async (req:Request, res:Response) => {
     const users = await findUser({})
@@ -23,3 +22,15 @@ export const listUser = async (req:Request, res:Response) => {
     res.json({added_user: addUser})
  }
 // >> Update <<
+
+export const updateUserById = async(req: Request, res: Response) => {
+    const updatedUser = await updateUser({id: req.query.id}, {name: req.body.name, age:req.body.age}, {new:true})
+    res.json({update_user: updatedUser})
+}
+
+// >> Delete <<
+
+export const delteById = async( req: Request, res: Response) => {
+    const deletedUser = await  deleteUser({id: req.query.id})
+    res.json({msg: "User delete successsfullly!!"})
+}
