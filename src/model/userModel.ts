@@ -1,5 +1,15 @@
 import {Schema, model, Document } from "mongoose";
 
+
+//this interface is for services
+
+export interface UserDocument extends Document {
+    name: string,
+    age: number, 
+}
+
+
+//this interface is for model
 interface User {
     name:string,
     age:number,
