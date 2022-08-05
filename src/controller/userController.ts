@@ -17,7 +17,9 @@ export const listUser = async (req:Request, res:Response) => {
 
 // >> Add <<
  export const newUser = async( req: Request, res: Response) => {
-    const addUser = await createUser({name: req.body.name, age: req.body.age}) 
+    const addUser = await createUser({name: req.body.name, age: req.body.age, email: req.body.email, 
+        bio: req.body.bio, hobbies: req.body.bio
+    }) 
     res.json({added_user: addUser})
  }
 // >> Update <<
