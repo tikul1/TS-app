@@ -1,5 +1,4 @@
 import  express,{Request, Response} from "express";
-import  User  from "../model/userModel";
 import {createUser, findUser, updateUser, deleteUser} from "../services/userService"
 
 //find without creating services

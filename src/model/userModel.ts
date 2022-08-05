@@ -1,29 +1,22 @@
-import {Schema, model, Document } from "mongoose";
-
-
-//this interface is for services
-
-export interface UserDocument extends Document {
-    name: string,
-    age: number, 
-}
-
+import {Schema, model } from "mongoose";
 
 //this interface is for model
-interface User {
+export interface UserInterface {
     name:string,
     age:number,
-
+    email?:string                                    // optional field
 }
-const userSchema = new Schema<User>({
+const userSchema = new Schema<UserInterface>({
     name: {
         type: String,
         
     },
     age: {
         type: Number
+    },
+    email: {
+        type: String
     }
 })
-
-const UserModel = model<User>("User",userSchema )
+const UserModel = model<UserInterface>("User",userSchema )
 export default UserModel

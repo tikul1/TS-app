@@ -1,4 +1,4 @@
-import  express,{Request, Response} from "express";
+import  express,{Request, Response} from "express";  //app
 import { router }from "./routes/routes";
 import { connects } from "./db/db";
 const app = express();
@@ -17,6 +17,6 @@ app.use('/', router)
 //     res.json({msg: "test working!!!!"});
 // });
 
-const PORT : number = 8080;
+const PORT : number = 8090;
 app.listen(PORT, ():void => console.log(`Server running on : ${PORT}`)
 )
