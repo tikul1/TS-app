@@ -1,12 +1,12 @@
 import  express from "express";
 import { demo }from '../controller/demoController'
-import { newUser,listUser, updateUserById, delteById } from "../controller/userController";
+import { listUser, newUser,updateUserById, delteById } from "../controller/userController";
 const router = express.Router();
 
-router.get("/demo", demo);
+// router.get("/demo", demo);
 router.get("/list",listUser );
 router.post("/user", newUser)
-router.put("/updateuser", updateUserById) 
-router.delete("/delete", delteById) 
+router.put("/updateuser/:id", updateUserById) 
+router.delete("/delete/:id", delteById) 
 
 export { router}

@@ -1,19 +1,19 @@
-import {Schema, model, Types } from "mongoose";
+import {Schema, model, Types, Document } from "mongoose";
 
-// documentarray's interface
+// // documentarray's interface
 interface hobbiesI {
     // _id: Types.ObjectId,
-    hName: number
+    hName: string
 }
 //this interface is for model
-export interface UserInterface {
+export interface UserInterface extends Document {
     name:string;
     age:number;
     email:string;                                    // optional field
-    bio?: Types.Array<number>;                           // optiona array of string
+    bio?: Types.Array<string>;                           // optiona array of string
     hobbies?: Types.DocumentArray<hobbiesI>;
 }
-const userSchema = new Schema<UserInterface >({
+const userSchema = new Schema<UserInterface, hobbiesI>({
     name: {
         type: String,
     },
@@ -23,8 +23,11 @@ const userSchema = new Schema<UserInterface >({
     email: {
         type: String
     },
-    bio: [Number],
+    bio: [String],
     hobbies: [{hName: String}]
 })
-const UserModel = model<UserInterface>("User",userSchema )
+
+// type User = InferSchemaType<typeof userSchema>;
+
+const UserModel = model("User",userSchema )
 export default UserModel
