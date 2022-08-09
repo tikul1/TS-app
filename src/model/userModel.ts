@@ -1,4 +1,5 @@
-import mongoose, {Schema, model, Types, Document } from "mongoose";
+import  {Schema, model, Types, Document } from "mongoose";
+import mongoose from "../db/db";
 // // documentarray's interface
 export interface hobbiesI extends Document{
     hName: number
@@ -26,7 +27,7 @@ export interface UserInterface extends hobbiesI, Document {
 // })
 // const UserModel = model<UserInterface >("User",userSchema )
 
-type userType = UserInterface & mongoose.Document;
+type userType = UserInterface & Document;
 const UserModel  = mongoose.model<userType>('User', new mongoose.Schema({
     name: {
                 type: String,
