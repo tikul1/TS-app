@@ -20,7 +20,7 @@ export const listUser = async (req:Request, res:Response): Promise<void> => {
 export const newUser = async (req:Request, res:Response): Promise<void> => {
     try{
         const data = req.body as Pick<UserInterface, "name" | "age" | "email" | "hobbies" | "bio" >
-        const userData: UserInterface = new User({
+        const userData : UserInterface = new User ({
             name: data.name,
             age: data.age,
             email: data.email,
