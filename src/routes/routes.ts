@@ -7,4 +7,4 @@ router.post("/user", newUser)
 router.put("/updateuser/:id", updateUserById) 
 router.delete("/delete/:id", delteById) 
 
-export { router}
+export { router }

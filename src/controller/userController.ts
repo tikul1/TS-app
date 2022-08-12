@@ -67,8 +67,6 @@ export const delteById = async (req:Request, res:Response): Promise<void> => {
     }
 }
 
-
-
 //CRUD with the help of services
 // >> Find  <<
 // export const listUser = async (req:Request, res:Response) => {
