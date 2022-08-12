@@ -30,15 +30,15 @@ export interface UserInterface extends hobbiesI, Document {
 type userType = UserInterface & Document;
 const UserModel  = mongoose.model<userType>('User', new mongoose.Schema({
     name: {
-                type: String,
+                type!: String,
             },
-            age: {
+            age!: {
                 type: Number
             },
-            email: {
+            email!: {
                 type: String
             },
-            bio: [Number],
-            hobbies: [{hName: Number}]
+            bio!: [Number],
+            hobbies!: [{hName: Number}]
 }))
 export default UserModel
