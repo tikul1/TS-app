@@ -1,4 +1,4 @@
-import  express, { application, Application } from "express";  //app
+import  express, { Application } from "express";  //app
 import { router }from "./routes/routes";
 const app: Application = express();
 
@@ -15,6 +15,7 @@ app.use(
     extended: true,
   })
 );
+
 app.use('/', router)
 
 const PORT : number = 8090;

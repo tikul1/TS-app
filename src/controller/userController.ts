@@ -1,5 +1,5 @@
-import  express,{Request, Response} from "express";
-import User, {UserInterface, hobbiesI} from '../model/userModel'
+import  {Request, Response} from "express";
+import User, {UserInterface} from '../model/userModel'
 
 // import {createUser, findUser, updateUser, deleteUser} from "../services/userService"
 

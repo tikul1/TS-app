@@ -28,7 +28,7 @@ export interface UserInterface extends hobbiesI, Document {
 // const UserModel = model<UserInterface >("User",userSchema )
 
 type userType = UserInterface & Document;
-const UserModel  = mongoose.model<userType>('User', new mongoose.Schema({
+const UserModel   = mongoose.model<userType>('User', new mongoose.Schema({
     name: {
                 type!: String,
             },
